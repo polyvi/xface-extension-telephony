@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.polyvi.xface.extension.telephony"
+    version="1.0.0">
+    <name>Telephony</name>
+    <description>xFace Telephony Extension</description>
+    <license>GPL v3</license>
+    <keywords>cordova,xface,telephony</keywords>
+
+    <js-module src="www/Telephony.js" name="Telephony">
+        <clobbers target="xFace.Telephony" />
+    </js-module>
+
+     <!-- ios -->
+     <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="Telephony">
+                 <param name="ios-package" value="XTelephonyExt"/>
+             </feature>
+         </config-file>
+
+         <header-file src="src/ios/private/XTelephonyExt_Privates.h" />
+         <header-file src="src/ios/XTelephonyExt.h" />
+         <source-file src="src/ios/XTelephonyExt.m" />
+     </platform>
+</plugin>
