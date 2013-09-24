@@ -9,11 +9,7 @@
     <license>GPL v3</license>
     <keywords>cordova,xface,telephony</keywords>
 
-    <js-module src="www/Telephony.js" name="Telephony">
-        <clobbers target="xFace.Telephony" />
-    </js-module>
-
-	 <!-- android -->
+	<!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Telephony">
@@ -23,19 +19,30 @@
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.CALL_PHONE" />
         </config-file>
+		<js-module src="www/android/Telephony.js" name="Telephony">
+            <clobbers target="xFace.Telephony" />
+        </js-module>
+		<js-mod    .ule src="www/ios/CallRecord.js" name="CallRecord">
+            <clobbers target="window.CallRecord" />
+        </js-module>
+		<js-module src="www/ios/CallRecordTypes.js" name="CallRecordTypes">
+            <clobbers target="window.CallRecordTypes" />
+        </js-module>
         <source-file src="src/android/XTelephonyExt.java" target-dir="src/com/polyvi/xface/extension" />
      </platform>
 
-     <!-- ios -->
-     <platform name="ios">
-         <config-file target="config.xml" parent="/*">
-             <feature name="Telephony">
-                 <param name="ios-package" value="XTelephonyExt"/>
-             </feature>
-         </config-file>
-
-         <header-file src="src/ios/private/XTelephonyExt_Privates.h" />
-         <header-file src="src/ios/XTelephonyExt.h" />
-         <source-file src="src/ios/XTelephonyExt.m" />
-     </platform>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Telephony">
+                <param name="ios-package" value="XTelephonyExt"/>
+            </feature>
+        </config-file>
+		<js-module src="www/ios/Telephony.js" name="Telephony">
+            <clobbers target="xFace.Telephony" />
+        </js-module>
+        <header-file src="src/ios/private/XTelephonyExt_Privates.h" />
+        <header-file src="src/ios/XTelephonyExt.h" />
+        <source-file src="src/ios/XTelephonyExt.m" />
+    </platform>
 </plugin>
