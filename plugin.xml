@@ -22,7 +22,7 @@
 		<js-module src="www/android/Telephony.js" name="Telephony">
             <clobbers target="xFace.Telephony" />
         </js-module>
-		<js-mod    .ule src="www/android/CallRecord.js" name="CallRecord">
+		<js-module src="www/android/CallRecord.js" name="CallRecord">
             <clobbers target="window.CallRecord" />
         </js-module>
 		<js-module src="www/android/CallRecordTypes.js" name="CallRecordTypes">
