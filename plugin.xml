@@ -6,7 +6,7 @@
     version="1.0.0">
     <name>Telephony</name>
     <description>xFace Telephony Extension</description>
-    <license>GPL v3</license>
+    <license>GPLv3</license>
     <keywords>cordova,xface,telephony</keywords>
 
 	<!-- android -->
@@ -22,10 +22,10 @@
 		<js-module src="www/android/Telephony.js" name="Telephony">
             <clobbers target="xFace.Telephony" />
         </js-module>
-		<js-mod    .ule src="www/ios/CallRecord.js" name="CallRecord">
+		<js-mod    .ule src="www/android/CallRecord.js" name="CallRecord">
             <clobbers target="window.CallRecord" />
         </js-module>
-		<js-module src="www/ios/CallRecordTypes.js" name="CallRecordTypes">
+		<js-module src="www/android/CallRecordTypes.js" name="CallRecordTypes">
             <clobbers target="window.CallRecordTypes" />
         </js-module>
         <source-file src="src/android/XTelephonyExt.java" target-dir="src/com/polyvi/xface/extension" />
