@@ -9,6 +9,10 @@
     <license>GPLv3</license>
     <keywords>cordova,xface,telephony</keywords>
 
+    <js-module src="www/Telephony.js" name="Telephony">
+        <clobbers target="xFace.Telephony" />
+    </js-module>
+
 	<!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -38,11 +42,24 @@
                 <param name="ios-package" value="XTelephonyExt"/>
             </feature>
         </config-file>
-		<js-module src="www/ios/Telephony.js" name="Telephony">
-            <clobbers target="xFace.Telephony" />
-        </js-module>
+
         <header-file src="src/ios/private/XTelephonyExt_Privates.h" />
         <header-file src="src/ios/XTelephonyExt.h" />
         <source-file src="src/ios/XTelephonyExt.m" />
+    </platform>
+
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Telephony">
+                <param name="wp-package" value="Telephony"/>
+            </feature>
+        </config-file>
+
+        <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+            <Capability Name="ID_CAP_PHONEDIALER"/>
+        </config-file>
+
+        <source-file src="src/wp/XTelephonyExt.cs" />
     </platform>
 </plugin>
