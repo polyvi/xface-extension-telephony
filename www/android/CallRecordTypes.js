@@ -1,4 +1,3 @@
-cordova.define("com.polyvi.xface.extension.telephony.CallRecordTypes", function(require, exports, module) {
 /*
  This file was modified from or inspired by Apache Cordova.
 
@@ -69,4 +68,3 @@ var CallRecordTypes = {
 };
 
 module.exports = CallRecordTypes;
-});

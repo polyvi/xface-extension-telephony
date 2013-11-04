@@ -1,4 +1,3 @@
-cordova.define("com.polyvi.xface.extension.telephony.CallRecord", function(require, exports, module) {
 /*
  This file was modified from or inspired by Apache Cordova.
 
@@ -91,4 +90,3 @@ var CallRecord = function(callRecordAddress,callRecordId,callRecordName,callReco
     this.startTime = startTime || null;
 };
 module.exports = CallRecord;
-});
