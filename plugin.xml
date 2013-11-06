@@ -23,10 +23,10 @@
             <clobbers target="xFace.Telephony" />
         </js-module>
 		<js-module src="www/android/CallRecord.js" name="CallRecord">
-            <clobbers target="window.CallRecord" />
+            <clobbers target="xFace.Telephony.CallRecord" />
         </js-module>
 		<js-module src="www/android/CallRecordTypes.js" name="CallRecordTypes">
-            <clobbers target="window.CallRecordTypes" />
+            <clobbers target="xFace.Telephony.CallRecordTypes" />
         </js-module>
         <source-file src="src/android/XTelephonyExt.java" target-dir="src/com/polyvi/xface/extension" />
      </platform>
