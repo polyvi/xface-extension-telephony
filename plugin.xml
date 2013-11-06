@@ -18,6 +18,8 @@
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.CALL_PHONE" />
+			<uses-permission android:name="android.permission.READ_CALL_LOG" />
+            <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
         </config-file>
 		<js-module src="www/android/Telephony.js" name="Telephony">
             <clobbers target="xFace.Telephony" />
