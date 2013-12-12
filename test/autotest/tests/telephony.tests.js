@@ -1,9 +1,9 @@
 describe('Telephony (xFace.Telephony)', function () {
-    it("should exist", function() {
+    it("telephony.spec.1 should exist", function() {
         expect(xFace.Telephony).toBeDefined();
     });
 
-    it("should contain proper functions", function() {
+    it("telephony.spec.2 should contain proper functions", function() {
         if(isAndroid()) {
 	        expect(xFace.Telephony.deleteAllCallRecords).toBeDefined();
 	        expect(typeof xFace.Telephony.deleteAllCallRecords).toBe('function');
@@ -26,7 +26,7 @@ describe('Telephony (xFace.Telephony)', function () {
 			    expect(entry).toBeDefined();
 				expect(entry).toBeGreaterThan(-1);
 	        });
-	        it("should be able to getCallRecordCount", function() {
+	        it("telephony.spec.3 should be able to getCallRecordCount", function() {
 	            runs(function() {
 	                var telephony = xFace.Telephony;
 	                telephony.getCallRecordCount(xFace.Telephony.CallRecordTypes.OUTGOING,win, fail);
@@ -34,7 +34,7 @@ describe('Telephony (xFace.Telephony)', function () {
 	            waitsForAny(win, fail);
 	         });
 	    });
-		
+
 	    describe('getCallRecord method', function() {
 	        var fail = createDoNotCallSpy('getCallRecordFail');
 	        var win = jasmine.createSpy().andCallFake(function(entry) {
@@ -47,7 +47,7 @@ describe('Telephony (xFace.Telephony)', function () {
 					expect(entry.callRecordType).toBeDefined();
 				}
 	        });
-	        it("should be able to get telephony first call record", function() {
+	        it("telephony.spec.4 should be able to get telephony first call record", function() {
 	            runs(function() {
 	                var telephony = xFace.Telephony;
 	                telephony.getCallRecord(xFace.Telephony.CallRecordTypes.OUTGOING,"1",win, fail);
@@ -61,7 +61,7 @@ describe('Telephony (xFace.Telephony)', function () {
 	        var win = jasmine.createSpy().andCallFake(function(entry) {
 				expect(entry.length).toBeGreaterThan(-1);
 	        });
-	        it("should be able to find calls record", function() {
+	        it("telephony.spec.5 should be able to find calls record", function() {
 	            runs(function() {
 	                var telephony = xFace.Telephony;
 	                var compairedCallRecord = new xFace.Telephony.CallRecord("*","","*","",null,null);
@@ -70,12 +70,12 @@ describe('Telephony (xFace.Telephony)', function () {
 	            waitsForAny(win, fail);
 	         });
 	    });
-		
+
 	    describe('deleteCallRecord method', function() {
 	        var fail = createDoNotCallSpy('deleteCallRecordFail');
 	        var win = jasmine.createSpy().andCallFake(function() {
 	        });
-	        it("should be able to delete outgoing id = 0 record", function() {
+	        it("telephony.spec.6 should be able to delete outgoing id = 0 record", function() {
 	            runs(function() {
 	                var telephony = xFace.Telephony;
 	                telephony.deleteCallRecord(xFace.Telephony.CallRecordTypes.OUTGOING,"0",win, fail);
@@ -83,7 +83,7 @@ describe('Telephony (xFace.Telephony)', function () {
 	            waitsForAny(win, fail);
 	         });
 	    });
-		
+
 	   describe('deleteAllCallRecords method', function() {
 	        var fail = createDoNotCallSpy('deleteAllCallRecordsFail');
 	        var win = jasmine.createSpy().andCallFake(function() {
@@ -95,19 +95,19 @@ describe('Telephony (xFace.Telephony)', function () {
 	        });
 			var get_count_win = jasmine.createSpy().andCallFake(function(entry) {
 			    expect(entry).toBeDefined();
-				expect(entry).toEqual(0);		
-	        });	
-	        it("should be able to delete all  call records", function() {
+				expect(entry).toEqual(0);
+	        });
+	        it("telephony.spec.7 should be able to delete all  call records", function() {
 	            runs(function() {
 	                var telephony = xFace.Telephony;
 	                telephony.deleteAllCallRecords(xFace.Telephony.CallRecordTypes.OUTGOING,win, fail);
 	            });
 	            waitsForAny(win, fail);
 	         });
-	    });		
+	    });
 	 }
      describe('initiateVoiceCall method', function() {
-        it("should be get error when initiateVoiceCall phonenumber has letter", function() {
+        it("telephony.spec.8 should be get error when initiateVoiceCall phonenumber has letter", function() {
             var win  = createDoNotCallSpy('initiateVoiceCallWin');
             var fail = jasmine.createSpy().andCallFake(function() {
             });
@@ -118,7 +118,7 @@ describe('Telephony (xFace.Telephony)', function () {
             waitsForAny(win, fail);
          });
 
-        it("should be get error when initiateVoiceCall phonenumber null", function() {
+        it("telephony.spec.9 should be get error when initiateVoiceCall phonenumber null", function() {
             var win  = createDoNotCallSpy('initiateVoiceCallWin');
             var fail = jasmine.createSpy().andCallFake(function() {
             });
@@ -129,7 +129,7 @@ describe('Telephony (xFace.Telephony)', function () {
             waitsForAny(win, fail);
          });
 
-        it("should be get error when initiateVoiceCall phonenumber has Blank space", function() {
+        it("telephony.spec.10 should be get error when initiateVoiceCall phonenumber has Blank space", function() {
             var win  = createDoNotCallSpy('initiateVoiceCallWin');
             var fail = jasmine.createSpy().andCallFake(function() {
             });
@@ -140,13 +140,13 @@ describe('Telephony (xFace.Telephony)', function () {
             waitsForAny(win, fail);
          });
 
-        it("should be get error when initiateVoiceCall phonenumber has chinese", function() {
+        it("telephony.spec.11 should be get error when initiateVoiceCall phonenumber has chinese", function() {
             var win  = createDoNotCallSpy('initiateVoiceCallWin');
             var fail = jasmine.createSpy().andCallFake(function() {
             });
             runs(function() {
                 var telephony = xFace.Telephony;
-                telephony.initiateVoiceCall('ÖÐÎÄ',win, fail);
+                telephony.initiateVoiceCall('ä¸­æ–‡',win, fail);
             });
             waitsForAny(win, fail);
         });
