@@ -13,7 +13,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Telephony">
-                <param name="android-package" value="com.polyvi.xface.extension.XTelephonyExt"/>
+                <param name="android-package" value="com.polyvi.xface.extension.telephony.XTelephonyExt"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -30,7 +30,7 @@
 		<js-module src="www/android/CallRecordTypes.js" name="CallRecordTypes">
             <clobbers target="xFace.Telephony.CallRecordTypes" />
         </js-module>
-        <source-file src="src/android/XTelephonyExt.java" target-dir="src/com/polyvi/xface/extension" />
+        <source-file src="src/android/XTelephonyExt.java" target-dir="src/com/polyvi/xface/extension/telephony" />
      </platform>
 
     <!-- ios -->
