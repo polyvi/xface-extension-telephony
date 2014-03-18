@@ -34,7 +34,6 @@
  * @param {Number} [durationSeconds=null] 通话的时长(单位是秒)
  * @param {Date} [startTime=null] 通话开始时间
  * @class CallRecord
- * @namespace
  * @constructor
  * @platform Android
  * @since 3.0.0

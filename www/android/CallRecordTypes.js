@@ -26,7 +26,6 @@
  /**
  * 定义通话记录相关的类型（Android）<br/>
  * @class CallRecordTypes
- * @namespace
  * @static
  * @platform Android
  * @since 3.0.0
