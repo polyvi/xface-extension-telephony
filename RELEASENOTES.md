@@ -28,3 +28,9 @@
  *  batch modify .reviewboard
  *  [android]Adjust file format
  *  Incremented plugin version on dev branch to 1.0.1-dev
+
+## 1.0.2 (Wed Mar 19 2014)
+
+
+ *  removed empty namespace from doc
+ *  Incremented plugin version on dev branch to 1.0.2-dev
