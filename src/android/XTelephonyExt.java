@@ -47,6 +47,7 @@ import android.provider.CallLog;
 import android.telephony.TelephonyManager;
 import android.webkit.WebView;
 
+import com.polyvi.xface.XFaceMainActivity;
 import com.polyvi.xface.event.XEvent;
 import com.polyvi.xface.event.XEventType;
 import com.polyvi.xface.event.XSystemEventCenter;
@@ -378,7 +379,8 @@ public class XTelephonyExt extends CordovaPlugin {
                 .getSystemService(Service.TELEPHONY_SERVICE);
         XEvent evt = XEvent.createEvent(XEventType.CALL_RECEIVED,
                 tm.getCallState());
-        XSystemEventCenter.getInstance().sendEventAsync(evt);
+        ((XFaceMainActivity) mContext).getEventCenter()
+        .sendEventAsync(evt);
     }
 
     /**
