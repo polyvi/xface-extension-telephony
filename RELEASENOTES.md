@@ -34,3 +34,10 @@
 
  *  removed empty namespace from doc
  *  Incremented plugin version on dev branch to 1.0.2-dev
+
+
+## 1.0.3 (Fri Apr 04 2014)
+
+
+ *  change the way of get Event
+ *  Incremented plugin version on dev branch to 1.0.3-dev
