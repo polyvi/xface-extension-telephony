@@ -32,7 +32,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Service;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -45,14 +44,10 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.CallLog;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.webkit.WebView;
 
-import com.polyvi.xface.XFaceMainActivity;
-import com.polyvi.xface.event.XEvent;
-import com.polyvi.xface.event.XEventType;
-import com.polyvi.xface.event.XSystemEventCenter;
-import com.polyvi.xface.util.XLog;
-import com.polyvi.xface.util.XUtils;
+import com.polyvi.xface.utils.XUtils;
 
 public class XTelephonyExt extends CordovaPlugin {
 
@@ -207,7 +202,7 @@ public class XTelephonyExt extends CordovaPlugin {
                 callRecord.put("startTime", startTime);
                 callRecord.put("callRecordType", callRecordType);
             } catch (JSONException e) {
-                XLog.e(CLASS_NAME, e.getMessage());
+                Log.e(CLASS_NAME, e.getMessage());
             }
         }
         return callRecord;
@@ -270,7 +265,7 @@ public class XTelephonyExt extends CordovaPlugin {
                 }
                 cursor.close();
             } catch (JSONException e) {
-                XLog.e(CLASS_NAME, e.toString());
+                Log.e(CLASS_NAME, e.toString());
             }
         }
         return result;
@@ -311,9 +306,9 @@ public class XTelephonyExt extends CordovaPlugin {
                 return true;
             }
         } catch (ActivityNotFoundException e) {
-            XLog.e(CLASS_NAME, e.toString());
+            Log.e(CLASS_NAME, e.toString());
         } catch (SecurityException e) {
-            XLog.e(CLASS_NAME, e.toString());
+            Log.e(CLASS_NAME, e.toString());
         }
         return false;
     }
@@ -375,12 +370,7 @@ public class XTelephonyExt extends CordovaPlugin {
     }
 
     private void incomingCallResponse(Intent intent) {
-        TelephonyManager tm = (TelephonyManager) mContext
-                .getSystemService(Service.TELEPHONY_SERVICE);
-        XEvent evt = XEvent.createEvent(XEventType.CALL_RECEIVED,
-                tm.getCallState());
-        ((XFaceMainActivity) mContext).getEventCenter()
-        .sendEventAsync(evt);
+      //todo
     }
 
     /**
@@ -458,7 +448,7 @@ public class XTelephonyExt extends CordovaPlugin {
             callRecord.put("startTime", startTime);
             callRecord.put("durationSeconds", durationSeconds);
         } catch (JSONException e) {
-            XLog.e(CLASS_NAME, e.toString());
+            Log.e(CLASS_NAME, e.toString());
         }
         return callRecord;
     }
